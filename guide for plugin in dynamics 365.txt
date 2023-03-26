@@ -1,0 +1,64 @@
+Creating a plugin:
+
+-Open Microsoft Visual Studio
+-Create new project
+-Search for "class library(.net framework)" make sure it is C# not a Visual Basic then select on that and click Next.
+-->Enter Project name
+-->Tick "Place solution and project in the same directory"
+-->Select ".Net Framework 4.7.1" for most compatibility. One of the most compatible frameworks right now.
+
+
+-Implement the interface of IPlugin
+-If you dont have package. Go to. Tool > Nuget Package Manager > Manage Nuget Packages for Solution > click on Browse tab > Search for microsoft.crm then select for "Microsoft.CrmSdk.CoreAssemblies" then install it.
+
+-After that, add below code to use Iplugin Interface:
+using Microsoft.Xrm.Sdk;
+using System.ServiceModel;
+-Code base on your requirements
+-After you code.
+-Build solution by right clicking on the right pane of your solution then click build solution
+-open XrmToolBox then open tool Plugin Registration
+-Click on Register then select Register New Assembly then register your plugin
+
+-Then select the assembly and click on "Register New Step" then fill in below:
+Message: Create
+Primary Entity: Account
+PostOperation - Will run after we perform the actual event in this case the creation of the account then set Asynchronous under Execution Mode and Server under Deployment
+
+---------------------------------------For Workflow---------------------------------------------------------
+//using directives namespace for custom workflow
+using Microsoft.Xrm.Sdk.Workflow;
+using Microsoft.Xrm.Sdk;
+using System.Activities;
+
+//Below is the attributes of the workflow
+[Input("Date of Birth for Record")]
+[RequiredArgument]
+[ReferenceTarget("dmsn_student")]
+public InArgument<EntityReference> Student { get; set; }
+
+[Output("Output of DOB for Record")]
+[ReferenceTarget("dnlb_student")]
+public InArgument<EntityReference> StudentOutput { get; set; }
+
+//below code is for data operations
+IWorkflowContext workflowContext = context.GetExtension<IWorkflowContext>();
+                IOrganizationServiceFactory serviceFactory = context.GetExtension<IOrganizationServiceFactory>();
+                IOrganizationService service = serviceFactory.CreateOrganizationService(workflowContext.InitiatingUserId);
+
+
+------------------------------------------------------------------------------------------------
+
+
+
+
+Notes:
+Register New Step
+Filtering Attribute -> Sets wheter the plugin were run
+
+Under Event Pipeline Stage of Execution
+PreValidation -> Essentially means that your plugins goona run before your entire form or record that your on is even validated. nothing is really happening but your plugin will run anyway.
+PreOperation -> Plugin will run after the form is validated. Gonna run before any values are actually save into database.
+PostOperation -> Plugin will run after all the values has been change into the database.
+Asynchronous -> run like JS. It will not run immediately as the event occurs. It's not going to throw any error messages.
+Synchronous -> will run immediately after you perform the operation.
