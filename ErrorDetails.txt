@@ -1,0 +1,82 @@
+Exception Message: Value cannot be null.
+Parameter name: attributeLogicalName
+
+ErrorCode: -2147220956
+HexErrorCode: 0x80040224
+
+HelpLink: http://go.microsoft.com/fwlink/?LinkID=398563&error=Microsoft.Crm.CrmException%3a80040224&client=platform
+
+TraceText: 
+	[Basic_Account_Plugin: Dmsn.Plugins.Training.CreateTaskPlugin]
+	[d4adb079-ddc9-ed11-b596-000d3a850d0b: Dmsn.Plugins.Training.CreateTaskPlugin: Create of account]
+	ActivityFeeds.Plugins.PluginBase.Execute(): Configuration is invalid. Skipping ActivityFeeds plugin execution (ConfigParam is null)
+	
+		
+		--- Context 1 Trace Start ---
+		Message : Create
+		Stage   : 40
+		Mode    : 0
+		Depth   : 1
+		Entity  : account
+		Id      : 69c9bc07-dec9-ed11-b596-000d3a850d0b
+		
+		InputParameters
+		  Target = account 69c9bc07-dec9-ed11-b596-000d3a850d0b
+	    accountclassificationcode   = 1 	(Microsoft.Xrm.Sdk.OptionSetValue)
+	    accountid                   = 69c9bc07-dec9-ed11-b596-000d3a850d0b 	(System.Guid)
+	    accountratingcode           = 1 	(Microsoft.Xrm.Sdk.OptionSetValue)
+	    address2_addresstypecode    = 1 	(Microsoft.Xrm.Sdk.OptionSetValue)
+	    address2_freighttermscode   = 1 	(Microsoft.Xrm.Sdk.OptionSetValue)
+	    address2_shippingmethodcode = 1 	(Microsoft.Xrm.Sdk.OptionSetValue)
+	    businesstypecode            = 1 	(Microsoft.Xrm.Sdk.OptionSetValue)
+	    createdby                   = systemuser d5c46aed-577f-ed11-81ac-000d3a85c47e  	(Microsoft.Xrm.Sdk.EntityReference)
+	    createdon                   = 3/24/2023 12:51:37 AM 	(System.DateTime)
+	    creditonhold                = False 	(System.Boolean)
+	    customersizecode            = 1 	(Microsoft.Xrm.Sdk.OptionSetValue)
+	    donotbulkemail              = False 	(System.Boolean)
+	    donotbulkpostalmail         = False 	(System.Boolean)
+	    donotemail                  = False 	(System.Boolean)
+	    donotfax                    = False 	(System.Boolean)
+	    donotphone                  = False 	(System.Boolean)
+	    donotpostalmail             = False 	(System.Boolean)
+	    donotsendmm                 = False 	(System.Boolean)
+	    exchangerate                = 1.000000000000 	(System.Decimal)
+	    followemail                 = True 	(System.Boolean)
+	    isprivate                   = False 	(System.Boolean)
+	    marketingonly               = False 	(System.Boolean)
+	    merged                      = False 	(System.Boolean)
+	    modifiedby                  = systemuser d5c46aed-577f-ed11-81ac-000d3a85c47e  	(Microsoft.Xrm.Sdk.EntityReference)
+	    modifiedon                  = 3/24/2023 12:51:37 AM 	(System.DateTime)
+	    modifiedonbehalfby          =       <null>
+	    msdyn_gdproptout            = False 	(System.Boolean)
+	    msdyn_taxexempt             = False 	(System.Boolean)
+	    msdyn_taxexemptnumber       =       <null>
+	    msdyn_travelcharge          =       <null>
+	    msdyn_travelcharge_base     =       <null>
+	    msdyn_travelchargetype      = 690970003 	(Microsoft.Xrm.Sdk.OptionSetValue)
+	    name                        = ito na yun par! 	(System.String)
+	    ownerid                     = systemuser d5c46aed-577f-ed11-81ac-000d3a85c47e  	(Microsoft.Xrm.Sdk.EntityReference)
+	    owningbusinessunit          = businessunit 16d107f8-027f-ed11-81ac-000d3a85c47e  	(Microsoft.Xrm.Sdk.EntityReference)
+	    participatesinworkflow      = False 	(System.Boolean)
+	    preferredcontactmethodcode  = 1 	(Microsoft.Xrm.Sdk.OptionSetValue)
+	    processid                   = 00000000-0000-0000-0000-000000000000 	(System.Guid)
+	    shippingmethodcode          = 1 	(Microsoft.Xrm.Sdk.OptionSetValue)
+	    statecode                   = 0 	(Microsoft.Xrm.Sdk.OptionSetValue)
+	    statuscode                  = 1 	(Microsoft.Xrm.Sdk.OptionSetValue)
+	    territorycode               = 1 	(Microsoft.Xrm.Sdk.OptionSetValue)
+	    transactioncurrencyid       = transactioncurrency 61c8e4f9-447f-ed11-81ac-000d3a85c47e  	(Microsoft.Xrm.Sdk.EntityReference)
+		OutputParameters
+		  id = 69c9bc07-dec9-ed11-b596-000d3a850d0b 	(System.Guid)
+		SharedVariables
+		  IsAutoTransact    = True 	(System.Boolean)
+		  AcceptLang        = en-US,en;q=0.9 	(System.String)
+		  x-ms-app-name     = msdynce_saleshub 	(System.String)
+		  DefaultsAddedFlag = True 	(System.Boolean)
+		--- Context 1 Trace End ---
+		
+		
+		00:51:38:409 Value cannot be null.
+		Parameter name: attributeLogicalName
+		00:51:38:409 Internal execution time: 0 ms
+
+Activity Id: 444f87f8-4454-413e-b8f2-9b5e515b989c
