@@ -1,0 +1,26 @@
+What is plugin?
+-Class library or Set of Classes
+-When you compile set of classes you get something called dll file or assembly file
+-assembly file has a custom code in it and you're going to register that in server side event to run you're custom logic.
+
+
+Plugin Pipeline:
+-Pre Validation 
+-Stage number(10)
+->
+
+-Pre Operation 
+-Stage number(20)
+->If you want to do some calculation, some logic before system saves the record inside it.
+
+-Core Event (No plugins allowed) - Database transaction
+-Stage number(30)
+
+-Post Operation 
+-Stage number(40)
+->When you want to be this record to be save in the database and also when it has dependency like the ID of the primaryt entity you always register this in post operation.
+
+
+-Pre-Entity Image
+>>If you want to access field data before modification (Old data)
+>>If you want to access some data of form that is not modified
