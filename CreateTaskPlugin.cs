@@ -16,10 +16,11 @@ namespace DMSNPlugins
             // Get the organization service
             IOrganizationServiceFactory serviceFactory = (IOrganizationServiceFactory)serviceProvider.GetService(typeof(IOrganizationServiceFactory));
             IOrganizationService service = serviceFactory.CreateOrganizationService(context.UserId);
-            try
-            { // Check if the plugin is triggered by the create message and the target is an account entity
-                if (context.MessageName.ToLower() == "create" && context.PrimaryEntityName.ToLower() == "account")
-                {
+            if (context.MessageName.ToLower() == "create" && context.PrimaryEntityName.ToLower() == "account")
+            {
+                try
+                { // Check if the plugin is triggered by the create message and the target is an account entity
+
                     // Get context of account record / Primary entity
                     Entity entity = (Entity)context.InputParameters["Target"];
                     tracingService.Trace($"Target Entity: {entity.LogicalName}");
@@ -39,17 +40,18 @@ namespace DMSNPlugins
                     service.Create(task);
                     tracingService.Trace("Task note successfully created!");
                 }
-            }
 
-            catch (FaultException<OrganizationServiceFault> ex)
-            {
-                throw new InvalidPluginExecutionException("An error occured", ex);
-            }
 
-            catch (Exception ex)
-            {
-                tracingService.Trace("Invalid Plugin {0}", ex.ToString());
-                throw;
+                catch (FaultException<OrganizationServiceFault> ex)
+                {
+                    throw new InvalidPluginExecutionException("An error occured", ex);
+                }
+
+                catch (Exception ex)
+                {
+                    tracingService.Trace("Invalid Plugin {0}", ex.ToString());
+                    throw;
+                }
             }
 
         }
