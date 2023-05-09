@@ -24,3 +24,18 @@ Plugin Pipeline:
 -Pre-Entity Image
 >>If you want to access field data before modification (Old data)
 >>If you want to access some data of form that is not modified
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Synchronous is like this - you complete one task, and then wait for the game to give you a response before moving on to the next task.
+
+
+Now, imagine that the game has an option to complete tasks asynchronously. In this case, you can complete one task, and then move on to the next task without waiting for a response from the game. The game will give you the reward later, when it is ready.
+
+
+
+synchronous plugins wait for a response from the system before moving on to the next step in the plugin execution process. This means that if the plugin needs to interact with external systems or perform long-running tasks, the plugin will block the execution process until the task is completed
+
+
+Asynchronous plugins, on the other hand, allow the plugin to continue processing without waiting for a response from the system. This means that the system can continue executing other tasks while the plugin is performing its tasks
