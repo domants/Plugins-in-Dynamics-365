@@ -54,7 +54,10 @@ If error reproduce using XrmToolBox Early Bound Generator
 -Select tool Early Bound Generator
 -Connect to your org
 -Select the entities you only needed
+-Change Service Context Name = svcContext
 -Hit Create Entities
+-Hit Create OptionSets
+-Hit Create Actions
 -You can access the generated file in below:
 C:\Users\<User>\AppData\Roaming\MscrmTools\XrmToolBox\Settings\EBG
 ------------------------------------------------------------------------------Late Binding vs Early Binding----------------------------------------------------------------------------------------------
