@@ -33,6 +33,18 @@ CrmSvcUtil.exe /interactivelogin /out:EarlyBindingXrm.cs /serviceContextName:ser
 -Wait for at least 2-5mnts to generate a new cs file depends on the 'out' value
 -Add the new cs file to your project
 
+------------------------------------------------------------------------------Late Binding vs Early Binding----------------------------------------------------------------------------------------------
+Late binding:
+-No strongly typed class needed. You can work with generic "Entity" class.
+-Prone to errors as you have to hardcode entity and attribute names.
+-Suitable for short logic (Simple plugins and Workflows)
+
+Early binding:
+-Strongly typed classes should be generated every time you change the customizations.
+-Easy to developers to work with. Intellisense support in Visual Studio.
+-Suitable for Large programs and XRM Tooling Applications (Console Apps)
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Notes:
 Register New Step
