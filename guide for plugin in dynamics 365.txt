@@ -38,6 +38,14 @@ CrmSvcUtil.exe /interactivelogin /out:<fileName>.cs /namespace:<outputNamespace>
 
 -Implement the name space 'using System.Linq;' to your program cs file
 
+
+If error reproduce using XrmToolBox Early Bound Generator
+-Open XrmToolBox
+-Select tool Early Bound Generator
+-Connect to your org
+-Hit Create All
+-You can access the generated file in below:
+C:\Users\<User>\AppData\Roaming\MscrmTools\XrmToolBox\Settings\EBG
 ------------------------------------------------------------------------------Late Binding vs Early Binding----------------------------------------------------------------------------------------------
 Late binding:
 -No strongly typed class needed. You can work with generic "Entity" class.
