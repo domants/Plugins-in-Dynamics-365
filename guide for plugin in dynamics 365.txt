@@ -28,7 +28,7 @@ Use Early Binding:
 -use cmd in the address bar of the folder to open the command prompt
 -CrmSvcUtil.exe hit enter
 -On your command prompt open paste the code below:
-CrmSvcUtil.exe /interactivelogin /out:EarlyBindingXrm.cs /serviceContextName:svcContext
+CrmSvcUtil.exe /interactivelogin /out:<fileName>.cs /namespace:<outputNamespace> /serviceContextName:svcContext
 -Login with your credentials.
 -Wait for at least 2-5mnts to generate a new cs file depends on the 'out' value
 -Add the new cs file to your project
