@@ -32,6 +32,9 @@ CrmSvcUtil.exe /interactivelogin /out:EarlyBindingXrm.cs /serviceContextName:ser
 -Login with your credentials.
 -Wait for at least 2-5mnts to generate a new cs file depends on the 'out' value
 -Add the new cs file to your project
+-Go to folder right click the generated file and select 'Copy as path'
+-Go back to your Visual Studio and right click the project and add existing file
+-Add the path you copy and select Add.
 
 ------------------------------------------------------------------------------Late Binding vs Early Binding----------------------------------------------------------------------------------------------
 Late binding:
