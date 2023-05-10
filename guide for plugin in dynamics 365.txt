@@ -57,6 +57,7 @@ Retrieve Multiple:
 
 ------------------------------------------------------------------------------Using LINQ query Early bind--------------------------------------------------------------------------------------------
 //Early binding
+eg.
     using (service context = new service(service))
        {
          var contact = from c in context.ContactSet
