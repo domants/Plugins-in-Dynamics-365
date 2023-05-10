@@ -7,50 +7,18 @@ Creating a plugin:
 -->Tick "Place solution and project in the same directory"
 -->Select ".Net Framework 4.7.1" for most compatibility. One of the most compatible frameworks right now.
 
+-Make sure your class is in public access modifier to be able to read when registering the plugin.
+-Install the assembly packages. 
+-Go to. Tool > Nuget Package Manager > Manage Nuget Packages for Solution > click on Browse tab > Search for microsoft.crm then select for "Microsoft.CrmSdk.CoreAssemblies" then install it.
 
--Implement the interface of IPlugin
--If you dont have package. Go to. Tool > Nuget Package Manager > Manage Nuget Packages for Solution > click on Browse tab > Search for microsoft.crm then select for "Microsoft.CrmSdk.CoreAssemblies" then install it.
-
--After that, add below code to use Iplugin Interface:
-using Microsoft.Xrm.Sdk;
-using System.ServiceModel;
--Code base on your requirements
--After you code.
+-Inerit the interface of 'IPlugin' to your class
+-After you code create your custom code.
 -Build solution by right clicking on the right pane of your solution then click build solution
--open XrmToolBox then open tool Plugin Registration
+-open XrmToolBox then open tool Plugin Registration or plugin registration tool
 -Click on Register then select Register New Assembly then register your plugin
+-Then select the assembly and click on "Register New Step"
 
--Then select the assembly and click on "Register New Step" then fill in below:
-Message: Create
-Primary Entity: Account
-PostOperation - Will run after we perform the actual event in this case the creation of the account then set Asynchronous under Execution Mode and Server under Deployment
-
----------------------------------------For Workflow---------------------------------------------------------
-//using directives namespace for custom workflow
-using Microsoft.Xrm.Sdk.Workflow;
-using Microsoft.Xrm.Sdk;
-using System.Activities;
-
-//Below is the attributes of the workflow
-[Input("Date of Birth for Record")]
-[RequiredArgument]
-[ReferenceTarget("dmsn_student")]
-public InArgument<EntityReference> Student { get; set; }
-
-[Output("Output of DOB for Record")]
-[ReferenceTarget("dnlb_student")]
-public InArgument<EntityReference> StudentOutput { get; set; }
-
-//below code is for data operations
-IWorkflowContext workflowContext = context.GetExtension<IWorkflowContext>();
-                IOrganizationServiceFactory serviceFactory = context.GetExtension<IOrganizationServiceFactory>();
-                IOrganizationService service = serviceFactory.CreateOrganizationService(workflowContext.InitiatingUserId);
-
-
-------------------------------------------------------------------------------------------------
-
-
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Notes:
 Register New Step
