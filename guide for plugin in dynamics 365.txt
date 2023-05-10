@@ -36,6 +36,8 @@ CrmSvcUtil.exe /interactivelogin /out:EarlyBindingXrm.cs /serviceContextName:svc
 -Go back to your Visual Studio and right click the project and add existing file
 -Add the path you copy and select Add.
 
+-Implement the name space 'using System.Linq;' to your program cs file
+
 ------------------------------------------------------------------------------Late Binding vs Early Binding----------------------------------------------------------------------------------------------
 Late binding:
 -No strongly typed class needed. You can work with generic "Entity" class.
@@ -53,7 +55,16 @@ Retrieve Multiple:
 2.Linq
 3.Fetchxml
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------Using LINQ query Early bind--------------------------------------------------------------------------------------------
+//Early binding
+    using (service context = new service(service))
+       {
+         var contact = from c in context.ContactSet
+                       where c.FirstName == "Ericson"
+                       select c;
+       }
+                        
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------             
 Notes:
 Register New Step
 Filtering Attribute -> Sets wheter the plugin were run
