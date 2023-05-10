@@ -19,6 +19,20 @@ Creating a plugin:
 -Then select the assembly and click on "Register New Step"
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Use Early Binding:
+-Download NuGet Packages to your solution
+-Browse for dynamics 365 and select 'Microsoft.CrmSdk.CoreTools'
+-Open the folder by right clicking the project and select 'Open Folder in File Explorer'
+-Go to bin > coretools
+-You can see the CrmSvcUtil.exe inside the folder
+-use cmd in the address bar of the folder to open the command prompt
+-CrmSvcUtil.exe hit enter
+-On your command prompt open paste the code below:
+CrmSvcUtil.exe /interactivelogin /out:EarlyBindingXrm.cs /serviceContextName:service
+-Login with your credentials.
+-Wait for at least 2-5mnts to generate a new cs file depends on the 'out' value
+-Add the new cs file to your project
+
 
 Notes:
 Register New Step
