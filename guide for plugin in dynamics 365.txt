@@ -53,7 +53,8 @@ If error reproduce using XrmToolBox Early Bound Generator
 -Open XrmToolBox
 -Select tool Early Bound Generator
 -Connect to your org
--Hit Create All
+-Select the entities you only needed
+-Hit Create Entities
 -You can access the generated file in below:
 C:\Users\<User>\AppData\Roaming\MscrmTools\XrmToolBox\Settings\EBG
 ------------------------------------------------------------------------------Late Binding vs Early Binding----------------------------------------------------------------------------------------------
