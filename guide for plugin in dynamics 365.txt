@@ -44,8 +44,13 @@ Early binding:
 -Easy to developers to work with. Intellisense support in Visual Studio.
 -Suitable for Large programs and XRM Tooling Applications (Console Apps)
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------Retrieving Multiple records from entity using query-----------------------------------------------------------------------------
+Retrieve Multiple:
+1.QueryExpression
+2.Linq
+3.Fetchxml
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Notes:
 Register New Step
 Filtering Attribute -> Sets wheter the plugin were run
