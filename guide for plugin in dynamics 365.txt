@@ -29,6 +29,7 @@ Use Early Binding:
 -CrmSvcUtil.exe hit enter
 -On your command prompt open paste the code below:
 
+url = Discovery Web service URL in d365
 CrmSvcUtil.exe /url:[instanceURL]/XRMServices/2011/Discovery.svc /out:C:\Users\User\Documents\EarlyBound\[FileName].cs /username:[username] /password:[password] /namespace:[namespace] /serviceContextName:[serviceContext]
 
 Example:
