@@ -40,6 +40,11 @@ If error reproduce using XrmToolBox Early Bound Generator
 -Hit Create Actions
 -You can access the generated file in below:
 C:\Users\<User>\AppData\Roaming\MscrmTools\XrmToolBox\Settings\EBG
+-Download NuGet Packages to your solution
+-Browse for dynamics 365 and select 'Microsoft.CrmSdk.CoreTools'
+-Open the folder by right clicking the project and select 'Open Folder in File Explorer'
+-Go to bin > coretools
+-Paste the 3 generated file
 ------------------------------------------------------------------------------Late Binding vs Early Binding----------------------------------------------------------------------------------------------
 Late binding:
 -No strongly typed class needed. You can work with generic "Entity" class.
