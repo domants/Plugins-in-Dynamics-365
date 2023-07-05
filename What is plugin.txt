@@ -25,17 +25,52 @@ Plugin Pipeline:
 >>If you want to access field data before modification (Old data)
 >>If you want to access some data of form that is not modified
 
-
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Synchronous is like this - you complete one task, and then wait for the game to give you a response before moving on to the next task.
-
-
 Now, imagine that the game has an option to complete tasks asynchronously. In this case, you can complete one task, and then move on to the next task without waiting for a response from the game. The game will give you the reward later, when it is ready.
 
 
 
 synchronous plugins wait for a response from the system before moving on to the next step in the plugin execution process. This means that if the plugin needs to interact with external systems or perform long-running tasks, the plugin will block the execution process until the task is completed
 
-
 Asynchronous plugins, on the other hand, allow the plugin to continue processing without waiting for a response from the system. This means that the system can continue executing other tasks while the plugin is performing its tasks
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Main operation = Web Services such as CRUD operations
+
+Database transactions - Maintain data and remains consistent in the event of error or exceptions during execution
+
+
+Pre-validation: Sync only
+-It is primarily used to perform early validation of the data or to enforce specific business rules. At this stage, the plugin can read and modify the data being processed but cannot prevent the operation from executing.
+-Executes before the main system operation and outside the database transaction.
+
+Pre-operation: Sync only
+-It provides developers with an opportunity to modify the data or extend the business logic before the operation is executed. In this stage, you can read, modify, and even cancel the operation being performed.
+-Executes before the main system operation and executed within the database transaction.	
+
+Post-operation: Sync and Async
+-It allows developers to perform additional actions or tasks based on the outcome of the operation. In this stage, you can read the data that has been changed by the operation but cannot make any modifications to it.
+-Executes after the main operation and within the database transaction (if sync).
+
+
+synchronously – these plugins are are executed immediately and run in a specific order
+-In synchronous execution mode, the plugin code is executed immediately within the same database transaction as the main operation. The main operation waits for the plugin code to complete before proceeding.
+
+Advantages of synchronous plugin execution include:
+Immediate response and feedback to the user.
+Ability to validate and modify data before it is saved.
+Ability to perform additional operations based on the outcome of the plugin execution.
+
+asynchronously – these plugins are executed by the Queue Agent and run later by the async service
+-In asynchronous execution mode, the plugin code is executed after the main operation has completed. The plugin request is typically queued and processed by the asynchronous service in the background.
+
+Advantages of asynchronous plugin execution include:
+Improved system performance and responsiveness as the main operation is not delayed by the plugin execution.
+Better scalability and handling of time-consuming operations or external dependencies.
+Ability to offload long-running or resource-intensive tasks to the background process.
